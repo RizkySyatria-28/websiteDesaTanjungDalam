@@ -43,10 +43,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Klik item menu -> tutup
-  navMenu.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", closeMenu);
+navMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", function (e) {
+
+    // Jika link adalah toggle submenu → JANGAN tutup menu
+    if (this.classList.contains("submenu-toggle")) {
+      return;
+    }
+
+    // Jika klik submenu item atau menu biasa → tutup menu
+    closeMenu();
   });
+});
 
   // Klik overlay -> tutup
   overlay.addEventListener("click", closeMenu);
+});
+
+/* ===== SUBMENU MOBILE ===== */
+document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const submenu = this.nextElementSibling;
+
+    // Tutup submenu lain (opsional, tapi rapi)
+    document.querySelectorAll(".submenu").forEach(function (menu) {
+      if (menu !== submenu) {
+        menu.classList.remove("show");
+      }
+    });
+
+    submenu.classList.toggle("show");
+  });
 });

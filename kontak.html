@@ -14,23 +14,34 @@
 
   <!-- ===== HEADER / NAVBAR ===== -->
   <header class="navbar">
-    <div class="menu-overlay" id="menuOverlay"></div>
     <div class="container nav-wrapper">
       <h1 class="logo">Desa Tanjung Dalam</h1>
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Beranda</a></li>
-          <li><a href="profil.html">Profil Desa</a></li>
+  <!-- ITEM DENGAN SUBMENU -->
+          <li class="has-submenu">
+            <a href="#" class="submenu-toggle">
+              Profil Desa <span class="arrow">▾</span>
+            </a>
+            <ul class="submenu">
+              <li><a href="profil.html">Profil Umum</a></li>
+             <li><a href="visi-misi.html">Visi & Misi</a></li>
+             <li><a href="sejarah.html">Sejarah Desa</a></li>
+             <li><a href="lambang.html">Lambang Desa</a></li>
+            </ul>
+           </li>
           <li><a href="umkm.html">UMKM</a></li>
           <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="kontak.html" class= "active">Kontak</a></li>
+          <li><a href="kontak.html"class="active">Kontak</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger">
         ☰
       </button>
     </div>
-  </header
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- ===== HERO KONTAK ===== -->
   <section class="hero small">
