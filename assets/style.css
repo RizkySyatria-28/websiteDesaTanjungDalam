@@ -303,6 +303,8 @@ img {
   border: 1px solid rgba(31, 111, 67, 0.1);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card::before {
@@ -331,6 +333,11 @@ img {
   border-radius: 12px;
   margin-bottom: 15px;
   transition: transform 0.4s ease;
+  width: 100%;
+  height: 200px;          /* tinggi seragam */
+  object-fit: cover;     /* potong proporsional */
+  border-radius: 12px;
+  display: block;
 }
 
 .card:hover img {
@@ -346,6 +353,7 @@ img {
 
 .card p {
   font-size: 15px;
+  margin-top: 12px;
   margin-bottom: 10px;
   color: #666;
   line-height: 1.7;
