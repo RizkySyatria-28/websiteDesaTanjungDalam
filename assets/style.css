@@ -111,11 +111,21 @@ img {
   font-size: 24px;
   font-weight: 800;
   margin: 0;
+  display: flex;
   letter-spacing: 0.5px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
+/* ===== LOGO HEADER ===== */
+@media (min-width: 1024px) {
+  .logo img {
+    height: 80px;      /* atur tinggi logo */
+    width: auto;       /* jaga proporsi */
+    display: block;
+    transition: height 0.2s ease;
+  }
+}
 .logo:hover {
   transform: scale(1.05);
 }
@@ -425,8 +435,20 @@ img {
 ===================== */
 @media (max-width: 768px) {
   .nav-wrapper {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: relative;
+    margin-right: auto;
+    left: 0;
+  }
+  
+  .logo img {
+    height: 42px;
+    width: auto;
   }
 
   .nav-menu {
@@ -501,11 +523,11 @@ img {
   /* Hamburger tetap kanan */
   .hamburger {
     display: block;
-    position: absolute;
+    position: relative;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
+    top: 0;
+    margin-left: auto;
+    align-self: center;      
   }
 
   /* MENU DROPDOWN */
