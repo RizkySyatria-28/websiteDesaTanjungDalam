@@ -77,3 +77,82 @@ document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
     submenu.classList.toggle("show");
   });
 });
+
+/* ===== LOAD BERITA (JSON) ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  const beritaContainer = document.getElementById("beritaList");
+
+  if (!beritaContainer) return;
+
+  fetch("assets/berita.json")
+    .then(response => response.json())
+    .then(data => {
+      let html = "";
+
+      data.forEach(berita => {
+        html += `
+          <div class="card">
+            <img src="${berita.gambar}" alt="${berita.judul}">
+            <h4>
+              <a href="berita-detail.html?id=${berita.id}">
+                ${berita.judul}
+              </a>
+            </h4>
+            <p class="meta">${berita.tanggal} • ${berita.kategori}</p>
+            <p>${berita.ringkas}</p>
+          </div>
+        `;
+      });
+
+      beritaContainer.innerHTML = html;
+    })
+    .catch(error => {
+      beritaContainer.innerHTML = "<p>Gagal memuat berita.</p>";
+      console.error(error);
+    });
+});
+
+/* ===== BERITA DETAIL (JSON) ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  const judulEl = document.getElementById("judulBerita");
+  const metaEl = document.getElementById("metaBerita");
+  const gambarEl = document.getElementById("gambarBerita");
+  const isiEl = document.getElementById("isiBerita");
+
+  // Jalankan hanya di halaman detail
+  if (!judulEl || !metaEl || !gambarEl || !isiEl) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) {
+    judulEl.textContent = "Berita tidak ditemukan";
+    return;
+  }
+
+  fetch("assets/berita.json")
+    .then(res => res.json())
+    .then(data => {
+      const berita = data.find(item => String(item.id) === String(id));
+
+      if (!berita) {
+        judulEl.textContent = "Berita tidak ditemukan";
+        return;
+      }
+
+      judulEl.textContent = berita.judul;
+      metaEl.textContent = `${berita.tanggal} • ${berita.kategori}`;
+      gambarEl.src = berita.gambar;
+      gambarEl.alt = berita.judul;
+
+      let htmlIsi = "";
+      berita.isi.forEach(paragraf => {
+        htmlIsi += `<p>${paragraf}</p>`;
+      });
+      isiEl.innerHTML = htmlIsi;
+    })
+    .catch(err => {
+      judulEl.textContent = "Gagal memuat berita";
+      console.error(err);
+    });
+});

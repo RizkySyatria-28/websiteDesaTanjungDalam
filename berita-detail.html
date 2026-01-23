@@ -14,36 +14,35 @@
 
   <!-- ===== HEADER / NAVBAR ===== -->
   <header class="navbar">
-    <div class="menu-overlay" id="menuOverlay"></div>
     <div class="container nav-wrapper">
       <a href="index.html" class="logo">
-        <img src="assets/images/logo-muara-enim.png" alt="Logo Kabupaten Muara Enim">
+        <img src="images/logo-muara-enim.png" alt="Logo Kabupaten Muara Enim">
       </a>
-
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Beranda</a></li>
-
+  <!-- ITEM DENGAN SUBMENU -->
           <li class="has-submenu">
-            <a href="#">Profil Desa ▾</a>
+            <a href="#" class="submenu-toggle">
+              Profil Desa <span class="arrow">▾</span>
+            </a>
             <ul class="submenu">
               <li><a href="profil.html">Profil Umum</a></li>
-              <li><a href="visi-misi.html">Visi & Misi</a></li>
-              <li><a href="sejarah.html">Sejarah Desa</a></li>
-              <li><a href="lambang.html">Lambang Desa</a></li>
+             <li><a href="visi-misi.html">Visi & Misi</a></li>
+             <li><a href="sejarah.html">Sejarah Desa</a></li>
+             <li><a href="lambang.html">Lambang Desa</a></li>
             </ul>
-          </li>
-
+           </li>
           <li><a href="umkm.html">UMKM</a></li>
-          <li><a href="berita.html" class="active">Berita</a></li>
           <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="berita.html" class="active">Berita</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
-
       <button class="hamburger" id="hamburger">☰</button>
     </div>
   </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero small">
@@ -54,48 +53,21 @@
   </section>
 
   <!-- ===== ISI BERITA ===== -->
-  <section class="section">
-    <div class="container berita-detail">
+<section class="section">
+  <div class="container berita-detail">
 
-      <a href="berita.html" class="back-link">← Kembali ke Berita</a>
+    <a href="berita.html" class="back-link">← Kembali ke Berita</a>
 
-      <h1 class="berita-title">
-        Kegiatan KKN Bersama Masyarakat Desa Tanjung Dalam
-      </h1>
+    <h1 class="berita-title" id="judulBerita"></h1>
+    <p class="berita-meta" id="metaBerita"></p>
 
-      <p class="berita-meta">
-        Dipublikasikan pada 21 Januari 2026 • Kegiatan Desa
-      </p>
+    <img id="gambarBerita" class="berita-image" alt="Gambar Berita">
 
-      <img 
-        src="assets/images/galeri1.jpg" 
-        alt="Kegiatan KKN" 
-        class="berita-image"
-      >
+    <div class="berita-content" id="isiBerita"></div>
 
-      <div class="berita-content">
-        <p>
-          Mahasiswa Kuliah Kerja Nyata (KKN) melaksanakan berbagai kegiatan
-          pendampingan bersama masyarakat Desa Tanjung Dalam. Kegiatan ini
-          bertujuan untuk meningkatkan partisipasi masyarakat dalam pembangunan
-          desa serta memperkuat nilai kebersamaan.
-        </p>
+  </div>
+</section>
 
-        <p>
-          Program yang dilaksanakan meliputi pendampingan literasi digital,
-          pendampingan UMKM, kegiatan sosial, serta edukasi kepada masyarakat.
-          Kegiatan ini mendapat sambutan positif dari warga desa.
-        </p>
-
-        <p>
-          Diharapkan melalui kegiatan KKN ini, masyarakat Desa Tanjung Dalam
-          dapat memperoleh manfaat nyata, khususnya dalam pengembangan potensi
-          ekonomi dan peningkatan kualitas sumber daya manusia.
-        </p>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">

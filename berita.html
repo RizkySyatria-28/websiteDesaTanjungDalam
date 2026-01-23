@@ -22,8 +22,11 @@
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Beranda</a></li>
+
           <li class="has-submenu">
-            <a href="#">Profil Desa ▾</a>
+            <a href="#" class="submenu-toggle">
+              Profil Desa <span class="arrow">▾</span>
+            </a>
             <ul class="submenu">
               <li><a href="profil.html">Profil Umum</a></li>
               <li><a href="visi-misi.html">Visi & Misi</a></li>
@@ -34,7 +37,7 @@
 
           <li><a href="umkm.html">UMKM</a></li>
           <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="berita.html" class="active">Berita</a></li
+          <li><a href="berita.html" class="active">Berita</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
@@ -42,6 +45,9 @@
       <button class="hamburger" id="hamburger">☰</button>
     </div>
   </header>
+
+  <!-- OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- ===== HERO BERITA ===== -->
   <section class="hero small">
@@ -56,41 +62,25 @@
     <div class="container">
       <h3 class="section-title">Berita Terbaru</h3>
 
-      <div class="card-wrapper">
-
-        <!-- BERITA ITEM -->
-        <div class="card">
-          <img src="images/galeri1.jpeg" alt="Kegiatan KKN">
-          <h4>
-              <a href="berita-detail.html"> Kegiatan KKN Bersama Masyarakat </a>
-            </h4>
-          <p class="meta">21 Januari 2026 • Kegiatan Desa</p>
-          <p>
-            Mahasiswa KKN melaksanakan kegiatan pendampingan dan sosial bersama
-            masyarakat Desa Tanjung Dalam.
-          </p>
+      <!-- ⬇️ BERITA AKAN DI-RENDER DARI JSON -->
+      <div class="card-wrapper" id="beritaList">
+        <div class="card skeleton">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
         </div>
 
-        <div class="card">
-          <img src="images/galeri2.jpeg" alt="Pendampingan UMKM">
-          <h4>Pendampingan UMKM Ibu-Ibu Desa</h4>
-          <p class="meta">18 Januari 2026 • UMKM</p>
-          <p>
-            Kegiatan pendampingan UMKM berupa foto produk dan edukasi pemasaran
-            sederhana menggunakan HP.
-          </p>
+        <div class="card skeleton">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
         </div>
 
-        <div class="card">
-          <img src="images/galeri3.jpeg" alt="Kegiatan Sosial">
-          <h4>Kegiatan Sosial dan Kebersamaan</h4>
-          <p class="meta">15 Januari 2026 • Sosial</p>
-          <p>
-            Masyarakat Desa Tanjung Dalam aktif dalam kegiatan sosial dan gotong royong
-            untuk mempererat kebersamaan.
-          </p>
+        <div class="card skeleton">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
         </div>
-
       </div>
     </div>
   </section>

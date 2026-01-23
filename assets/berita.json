@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "judul": "Kegiatan KKN Bersama Masyarakat Desa",
+    "tanggal": "21 Januari 2026",
+    "kategori": "Kegiatan Desa",
+    "gambar": "images/galeri1.jpeg",
+    "ringkas": "Mahasiswa KKN melaksanakan kegiatan pendampingan bersama masyarakat Desa Tanjung Dalam.",
+    "isi": [
+      "Mahasiswa Kuliah Kerja Nyata (KKN) melaksanakan berbagai kegiatan pendampingan bersama masyarakat Desa Tanjung Dalam.",
+      "Program meliputi literasi digital, pendampingan UMKM, serta kegiatan sosial kemasyarakatan.",
+      "Kegiatan ini mendapat sambutan positif dari masyarakat dan perangkat desa."
+    ]
+  },
+  {
+    "id": 2,
+    "judul": "Pendampingan UMKM Ibu-Ibu Desa",
+    "tanggal": "18 Januari 2026",
+    "kategori": "UMKM",
+    "gambar": "images/galeri2.jpeg",
+    "ringkas": "Pendampingan UMKM berupa edukasi foto produk dan promosi sederhana menggunakan HP.",
+    "isi": [
+      "Pendampingan UMKM difokuskan pada peningkatan kualitas foto produk.",
+      "Ibu-ibu dilatih memanfaatkan HP untuk promosi sederhana.",
+      "Kegiatan ini mendorong peningkatan kepercayaan diri pelaku UMKM."
+    ]
+  },
+  {
+    "id": 3,
+    "judul": "Kegiatan Sosial dan Gotong Royong",
+    "tanggal": "15 Januari 2026",
+    "kategori": "Sosial",
+    "gambar": "images/galeri3.jpeg",
+    "ringkas": "Masyarakat Desa Tanjung Dalam aktif dalam kegiatan sosial dan gotong royong.",
+    "isi": [
+      "Masyarakat Desa Tanjung Dalam menunjukkan semangat gotong royong yang tinggi.",
+      "Kegiatan sosial meliputi pembersihan lingkungan dan bantuan kepada warga kurang mampu.",
+      "Kebersamaan ini mempererat tali persaudaraan antarwarga desa."
+    ]
+  }
+]
