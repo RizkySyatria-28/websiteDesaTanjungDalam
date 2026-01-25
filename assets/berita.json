@@ -7,9 +7,7 @@
     "gambar": "images/galeri1.jpeg",
     "ringkas": "Mahasiswa KKN melaksanakan kegiatan pendampingan bersama masyarakat Desa Tanjung Dalam.",
     "isi": [
-      "Mahasiswa Kuliah Kerja Nyata (KKN) melaksanakan berbagai kegiatan pendampingan bersama masyarakat Desa Tanjung Dalam.",
-      "Program meliputi literasi digital, pendampingan UMKM, serta kegiatan sosial kemasyarakatan.",
-      "Kegiatan ini mendapat sambutan positif dari masyarakat dan perangkat desa."
+  
     ]
   },
   {
@@ -27,6 +25,58 @@
   },
   {
     "id": 3,
+    "judul": "Kegiatan Sosial dan Gotong Royong",
+    "tanggal": "15 Januari 2026",
+    "kategori": "Sosial",
+    "gambar": "images/galeri3.jpeg",
+    "ringkas": "Masyarakat Desa Tanjung Dalam aktif dalam kegiatan sosial dan gotong royong.",
+    "isi": [
+      "Masyarakat Desa Tanjung Dalam menunjukkan semangat gotong royong yang tinggi.",
+      "Kegiatan sosial meliputi pembersihan lingkungan dan bantuan kepada warga kurang mampu.",
+      "Kebersamaan ini mempererat tali persaudaraan antarwarga desa."
+    ]
+  },
+  {
+    "id": 4,
+    "judul": "Kegiatan Sosial dan Gotong Royong",
+    "tanggal": "15 Januari 2026",
+    "kategori": "Sosial",
+    "gambar": "images/galeri3.jpeg",
+    "ringkas": "Masyarakat Desa Tanjung Dalam aktif dalam kegiatan sosial dan gotong royong.",
+    "isi": [
+      "Masyarakat Desa Tanjung Dalam menunjukkan semangat gotong royong yang tinggi.",
+      "Kegiatan sosial meliputi pembersihan lingkungan dan bantuan kepada warga kurang mampu.",
+      "Kebersamaan ini mempererat tali persaudaraan antarwarga desa."
+    ]
+  },
+  {
+    "id": 5,
+    "judul": "Kegiatan Sosial dan Gotong Royong",
+    "tanggal": "15 Januari 2026",
+    "kategori": "Sosial",
+    "gambar": "images/galeri3.jpeg",
+    "ringkas": "Masyarakat Desa Tanjung Dalam aktif dalam kegiatan sosial dan gotong royong.",
+    "isi": [
+      "Masyarakat Desa Tanjung Dalam menunjukkan semangat gotong royong yang tinggi.",
+      "Kegiatan sosial meliputi pembersihan lingkungan dan bantuan kepada warga kurang mampu.",
+      "Kebersamaan ini mempererat tali persaudaraan antarwarga desa."
+    ]
+  },
+  {
+    "id": 6,
+    "judul": "Kegiatan Sosial dan Gotong Royong",
+    "tanggal": "15 Januari 2026",
+    "kategori": "Sosial",
+    "gambar": "images/galeri3.jpeg",
+    "ringkas": "Masyarakat Desa Tanjung Dalam aktif dalam kegiatan sosial dan gotong royong.",
+    "isi": [
+      "Masyarakat Desa Tanjung Dalam menunjukkan semangat gotong royong yang tinggi.",
+      "Kegiatan sosial meliputi pembersihan lingkungan dan bantuan kepada warga kurang mampu.",
+      "Kebersamaan ini mempererat tali persaudaraan antarwarga desa."
+    ]
+  },
+  {
+    "id": 7,
     "judul": "Kegiatan Sosial dan Gotong Royong",
     "tanggal": "15 Januari 2026",
     "kategori": "Sosial",
