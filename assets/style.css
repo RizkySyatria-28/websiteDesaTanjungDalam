@@ -120,7 +120,7 @@ img {
 /* ===== LOGO HEADER ===== */
 @media (min-width: 1024px) {
   .logo img {
-    height: 80px;      /* atur tinggi logo */
+    height: 60px;      /* atur tinggi logo */
     width: auto;       /* jaga proporsi */
     display: block;
     transition: height 0.2s ease;
@@ -179,8 +179,8 @@ img {
   align-items: center;
   justify-content: center;
 
-  background-image: url("../images/galeri3.jpeg");
-  background-size: cover;
+  background: linear-gradient(135deg, #e9f7ef, #f8fffb);
+  padding: 100px 0;  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -249,7 +249,26 @@ img {
   max-width: 700px;
   margin: auto;
   color: #f1f1f1;
-  animation: fadeInUp 1s ease;
+}
+
+/* HERO KHUSUS BERANDA */
+.hero-home {
+  background: url("../images/galeri3.jpeg") center/cover no-repeat;
+  position: relative;
+}
+
+/* Overlay agar teks tetap terbaca */
+.hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-home .hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
 }
 
 /* =====================
@@ -775,4 +794,39 @@ img {
 .center {
   text-align: center;
   margin-top: 30px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #1f6b3b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: 600;
+}
+
+.umkm-detail-img {
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  display: block;
 }

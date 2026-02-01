@@ -78,52 +78,83 @@ document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
   });
 });
 
-/* ===== LOAD BERITA (JSON) ===== */
+/* ===== LOAD BERITA + PAGINATION ===== */
 document.addEventListener("DOMContentLoaded", function () {
   const beritaContainer = document.getElementById("beritaList");
-  const emptyState = document.getElementById("beritaEmpty");
+  const prevBtn = document.getElementById("prevPage");
+  const nextBtn = document.getElementById("nextPage");
+  const pageInfo = document.getElementById("pageInfo");
 
-  if (!beritaContainer) return;
+  if (!beritaContainer || !prevBtn || !nextBtn || !pageInfo) return;
+
+  const ITEMS_PER_PAGE = 6;
+  let currentPage = 1;
+  let allBerita = [];
 
   fetch("assets/berita.json")
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
-      beritaContainer.innerHTML = "";
-
-      // JIKA DATA KOSONG
-      if (!data || data.length === 0) {
-        if (emptyState) emptyState.style.display = "block";
-        return;
-      }
-      
-      let html = "";
-
-      data.forEach(berita => {
-        html += `
-          <div class="card">
-            <img src="${berita.gambar}" alt="${berita.judul}">
-            <h4>
-              <a href="berita-detail.html?id=${berita.id}">
-                ${berita.judul}
-              </a>
-            </h4>
-            <p class="meta">${berita.tanggal} • ${berita.kategori}</p>
-            <p>${berita.ringkas}</p>
-          </div>
-        `;
-      });
-
-      beritaContainer.innerHTML = html;
+      allBerita = data;
+      renderBerita();
+      updatePagination();
     })
-    .catch(error => {
-      beritaContainer.innerHTML = "";
-      if (emptyState) {
-        emptyState.style.display = "block";
-        emptyState.innerHTML = "<p>Gagal memuat berita.</p>";
-      }
-      console.error(error);
+    .catch(err => {
+      beritaContainer.innerHTML = "<p>Gagal memuat berita.</p>";
+      console.error(err);
     });
+
+  function renderBerita() {
+    beritaContainer.innerHTML = "";
+
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageData = allBerita.slice(start, end);
+
+    pageData.forEach(berita => {
+      beritaContainer.innerHTML += `
+        <div class="card">
+          <img src="${berita.gambar}" alt="${berita.judul}">
+          <h4>
+            <a href="berita-detail.html?id=${berita.id}">
+              ${berita.judul}
+            </a>
+          </h4>
+          <p class="meta">${berita.tanggal} • ${berita.kategori}</p>
+          <p>${berita.ringkas}</p>
+        </div>
+      `;
+    });
+  }
+
+  function totalPages() {
+    return Math.ceil(allBerita.length / ITEMS_PER_PAGE);
+  }
+
+  function updatePagination() {
+    pageInfo.textContent = `Halaman ${currentPage} dari ${totalPages()}`;
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages();
+  }
+
+  prevBtn.addEventListener("click", function () {
+    if (currentPage > 1) {
+      currentPage--;
+      renderBerita();
+      updatePagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+
+  nextBtn.addEventListener("click", function () {
+    if (currentPage < totalPages()) {
+      currentPage++;
+      renderBerita();
+      updatePagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
 });
+
 
 /* ===== BERITA DETAIL (JSON) ===== */
 document.addEventListener("DOMContentLoaded", function () {
@@ -170,63 +201,79 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-/* ===== LOAD BERITA + LOAD MORE ===== */
+/* ===== LOAD UMKM (JSON) ===== */
 document.addEventListener("DOMContentLoaded", function () {
-  const beritaContainer = document.getElementById("beritaList");
-  const toggleBtn = document.getElementById("toggleBerita");
+  const umkmContainer = document.getElementById("umkmList");
+  if (!umkmContainer) return;
 
-  if (!beritaContainer || !toggleBtn) return;
-
-  let beritaData = [];
-  let limit = 3;
-  const STEP = 3;
-
-  function renderBerita() {
-    let html = "";
-
-    beritaData.slice(0, limit).forEach(berita => {
-      html += `
-        <div class="card">
-          <img src="${berita.gambar}" alt="${berita.judul}">
-          <h4>
-            <a href="berita-detail.html?id=${berita.id}">
-              ${berita.judul}
-            </a>
-          </h4>
-          <p class="meta">${berita.tanggal} • ${berita.kategori}</p>
-          <p>${berita.ringkas}</p>
-        </div>
-      `;
-    });
-
-    beritaContainer.innerHTML = html;
-
-    // Ubah teks tombol
-    if (limit >= beritaData.length) {
-      toggleBtn.textContent = "Muat Lebih Sedikit";
-    } else {
-      toggleBtn.textContent = "Muat Lebih Banyak";
-    }
-  }
-
-  toggleBtn.addEventListener("click", function () {
-    if (limit >= beritaData.length) {
-      limit = STEP; // reset ke awal
-    } else {
-      limit += STEP;
-    }
-    renderBerita();
-  });
-
-  fetch("assets/berita.json")
+  fetch("assets/umkm.json")
     .then(res => res.json())
     .then(data => {
-      beritaData = data;
-      renderBerita();
+      let html = "";
+
+      data.forEach(umkm => {
+        html += `
+          <div class="card">
+            <img src="${umkm.gambar}" alt="${umkm.nama}">
+            <h4>
+              <a href="detail-umkm.html?id=${umkm.id}">
+                ${umkm.nama}
+              </a>
+            </h4>
+            <p>${umkm.deskripsi_singkat}</p>
+            <p><strong>Pemilik:</strong> ${umkm.pemilik}</p>
+            <p><strong>Kontak:</strong> ${umkm.kontak}</p>
+          </div>
+        `;
+      });
+
+      umkmContainer.innerHTML = html;
     })
-    .catch(() => {
-      beritaContainer.innerHTML = "<p>Gagal memuat berita.</p>";
+    .catch(err => {
+      umkmContainer.innerHTML = "<p>Gagal memuat data UMKM.</p>";
+      console.error(err);
+    });
+});
+
+
+/* ===== DETAIL UMKM ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  const namaEl = document.getElementById("namaUMKM");
+  const gambarEl = document.getElementById("gambarUMKM");
+  const pemilikEl = document.getElementById("pemilikUMKM");
+  const kontakEl = document.getElementById("kontakUMKM");
+  const alamatEl = document.getElementById("alamatUMKM");
+  const deskripsiEl = document.getElementById("deskripsiUMKM");
+
+  if (!namaEl) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  fetch("assets/umkm.json")
+    .then(res => res.json())
+    .then(data => {
+      const umkm = data.find(item => String(item.id) === id);
+
+      if (!umkm) {
+        namaEl.textContent = "UMKM tidak ditemukan";
+        return;
+      }
+
+      namaEl.textContent = umkm.nama;
+      gambarEl.src = umkm.gambar;
+      pemilikEl.textContent = umkm.pemilik;
+      kontakEl.textContent = umkm.kontak;
+      alamatEl.textContent = umkm.alamat;
+
+      let html = "";
+      umkm.deskripsi_lengkap.forEach(p => {
+        html += `<p>${p}</p>`;
+      });
+      deskripsiEl.innerHTML = html;
+    })
+    .catch(err => {
+      namaEl.textContent = "Gagal memuat data UMKM";
+      console.error(err);
     });
 });

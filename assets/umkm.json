@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "nama": "Usaha Keripik Pisang",
+    "deskripsi_singkat": "Usaha makanan ringan rumahan dengan berbagai varian rasa.",
+    "deskripsi_lengkap": [
+      "Usaha keripik pisang ini dikelola secara rumahan oleh masyarakat desa.",
+      "Produk dibuat dari bahan lokal dengan proses higienis."
+    ],
+    "pemilik": "Ibu Siti",
+    "kontak": "08xxxxxxxxxx",
+    "gambar": "images/sample.jpg",
+    "alamat": "Dusun I, Desa Tanjung Dalam"
+  },
+  {
+    "id": 2,
+    "nama": "Kue Tradisional",
+    "deskripsi_singkat": "Produksi kue tradisional untuk konsumsi harian dan acara keluarga.",
+    "deskripsi_lengkap": [
+      "Menyediakan berbagai jenis kue tradisional khas desa.",
+      "Sering menerima pesanan untuk acara hajatan."
+    ],
+    "pemilik": "Ibu Ani",
+    "kontak": "08xxxxxxxxxx",
+    "gambar": "images/sample.jpg",
+    "alamat": "Dusun II, Desa Tanjung Dalam"
+  }
+]
