@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berita Desa | Desa Tanjung Dalam</title>
+  <title>Profil Umum Desa | Desa Tanjung Dalam</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/style.css" />
 
-  <meta name="description" content="Berita dan informasi terbaru seputar kegiatan Desa Tanjung Dalam." />
+  <meta name="description" content="Profil umum Desa Tanjung Dalam, Kecamatan Rambang, Kabupaten Muara Enim." />
 </head>
 <body>
 
@@ -23,20 +23,21 @@
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Beranda</a></li>
 
-  <!-- ITEM DENGAN SUBMENU -->
           <li class="has-submenu">
-            <a href="profil-umum.html">
+            <a href="profil-umum.html" class="active">
               Profil Desa <span class="arrow">▾</span>
             </a>
             <ul class="submenu">
-              <li><a href="profil-umum.html">Profil Umum</a></li>
+              <li><a href="profil-umum.html" class="active">Profil Umum</a></li>
               <li><a href="visi-misi.html">Visi & Misi</a></li>
               <li><a href="sejarah.html">Sejarah Desa</a></li>
+              <li><a href="lambang.html">Lambang Desa</a></li>
             </ul>
           </li>
+
           <li><a href="umkm.html">UMKM</a></li>
           <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="berita.html" class="active">Berita</a></li>
+          <li><a href="berita.html">Berita</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
@@ -48,30 +49,40 @@
   <!-- OVERLAY -->
   <div class="menu-overlay" id="menuOverlay"></div>
 
-  <!-- ===== HERO BERITA ===== -->
+  <!-- ===== HERO PROFIL UMUM ===== -->
   <section class="hero small">
     <div class="container hero-content">
-      <h2>Berita Desa Tanjung Dalam</h2>
-      <p>Informasi dan dokumentasi kegiatan terbaru masyarakat Desa Tanjung Dalam.</p>
+      <h2>Profil Umum Desa Tanjung Dalam</h2>
+      <p>Gambaran umum kondisi wilayah, sosial, dan potensi desa.</p>
     </div>
   </section>
 
-  <!-- ===== DAFTAR BERITA ===== -->
+  <!-- ===== ISI PROFIL UMUM ===== -->
   <section class="section">
     <div class="container">
-      <h3 class="section-title">Berita Terbaru</h3>
 
-      <!-- LIST BERITA (render dari JS + JSON) -->
-      <div class="card-wrapper" id="beritaList">
-        <!-- skeleton / berita muncul di sini -->
-      </div>
+      <h3 class="section-title">Gambaran Umum Desa</h3>
+      <p class="section-text">
+        Desa Tanjung Dalam merupakan salah satu desa yang berada di Kecamatan Rambang,
+        Kabupaten Muara Enim, Provinsi Sumatera Selatan. Masyarakat Desa Tanjung Dalam
+        sebagian besar bermata pencaharian sebagai petani karet dan pelaku usaha
+        mikro rumahan.
+      </p>
 
-      <!-- PAGINATION -->
-      <div class="pagination" id="pagination">
-        <button id="prevPage" disabled>« Sebelumnya</button>
-        <span id="pageInfo">Halaman 1</span>
-        <button id="nextPage">Berikutnya »</button>
-      </div>
+      <h3 class="section-title">Kondisi Sosial Masyarakat</h3>
+      <p class="section-text">
+        Kehidupan sosial masyarakat Desa Tanjung Dalam ditandai dengan kuatnya nilai
+        gotong royong, kebersamaan, serta partisipasi aktif dalam kegiatan keagamaan
+        dan kemasyarakatan.
+      </p>
+
+      <h3 class="section-title">Potensi Desa</h3>
+      <ul class="list">
+        <li>Pertanian karet sebagai sumber mata pencaharian utama.</li>
+        <li>Usaha mikro dan rumah tangga yang dikelola oleh ibu-ibu desa.</li>
+        <li>Ketersediaan lahan pekarangan yang produktif.</li>
+        <li>Budaya gotong royong yang masih terjaga.</li>
+      </ul>
 
     </div>
   </section>
