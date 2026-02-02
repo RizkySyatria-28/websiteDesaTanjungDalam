@@ -48,6 +48,8 @@ navMenu.querySelectorAll("a").forEach(link => {
 
     // Jika link adalah toggle submenu → JANGAN tutup menu
     if (this.classList.contains("submenu-toggle")) {
+      e.preventDefault();
+      e.stopPropagation();
       return;
     }
 
@@ -62,32 +64,21 @@ navMenu.querySelectorAll("a").forEach(link => {
 
 /* ===== SUBMENU MOBILE ===== */
 // MENU MOBILE - SUBMENU FIX
-navMenu.addEventListener("click", function (e) {
-  const toggle = e.target.closest(".submenu-toggle");
+toggle.addEventListener("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation(); // ⬅️ PENTING (INI KUNCINYA)
 
-  // 👉 Jika klik submenu toggle
-  if (toggle) {
-    e.preventDefault();
-    e.stopPropagation();
+  const submenu = this.nextElementSibling;
 
-    const submenu = toggle.nextElementSibling;
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.classList.remove("show");
+    }
+  });
 
-    // tutup submenu lain (opsional)
-    navMenu.querySelectorAll(".submenu").forEach(menu => {
-      if (menu !== submenu) {
-        menu.classList.remove("show");
-      }
-    });
-
-    submenu.classList.toggle("show");
-    return;
-  }
-
-  // 👉 Jika klik link biasa (bukan submenu)
-  if (e.target.tagName === "A") {
-    closeMenu();
-  }
+  submenu.classList.toggle("show");
 });
+
 
 /* ===== LOAD BERITA + PAGINATION ===== */
 document.addEventListener("DOMContentLoaded", function () {
