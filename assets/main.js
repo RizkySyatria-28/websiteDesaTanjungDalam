@@ -61,21 +61,32 @@ navMenu.querySelectorAll("a").forEach(link => {
 });
 
 /* ===== SUBMENU MOBILE ===== */
-document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
-  toggle.addEventListener("click", function (e) {
+// MENU MOBILE - SUBMENU FIX
+navMenu.addEventListener("click", function (e) {
+  const toggle = e.target.closest(".submenu-toggle");
+
+  // 👉 Jika klik submenu toggle
+  if (toggle) {
     e.preventDefault();
+    e.stopPropagation();
 
-    const submenu = this.nextElementSibling;
+    const submenu = toggle.nextElementSibling;
 
-    // Tutup submenu lain (opsional, tapi rapi)
-    document.querySelectorAll(".submenu").forEach(function (menu) {
+    // tutup submenu lain (opsional)
+    navMenu.querySelectorAll(".submenu").forEach(menu => {
       if (menu !== submenu) {
         menu.classList.remove("show");
       }
     });
 
     submenu.classList.toggle("show");
-  });
+    return;
+  }
+
+  // 👉 Jika klik link biasa (bukan submenu)
+  if (e.target.tagName === "A") {
+    closeMenu();
+  }
 });
 
 /* ===== LOAD BERITA + PAGINATION ===== */
