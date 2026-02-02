@@ -174,13 +174,13 @@ img {
 ===================== */
 .hero {
   position: relative;
-  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
   background: linear-gradient(135deg, #e9f7ef, #f8fffb);
-  padding: 100px 0;  background-size: cover;
+  padding: 70px 0;  background-size: cover;
+  min-height: 280px;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -213,7 +213,8 @@ img {
 }
 
 .hero.small {
-  padding: 70px 0;
+  min-height: 240px;
+  padding: 60px 0;
 }
 
 .hero-content {
@@ -253,6 +254,7 @@ img {
 
 /* HERO KHUSUS BERANDA */
 .hero-home {
+  min-height: 75vh;
   background: url("../images/galeri3.jpeg") center/cover no-repeat;
   position: relative;
 }
@@ -488,9 +490,7 @@ img {
   }
 
   .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    flex-wrap: nowrap;
   }
 
   .hero-content h2 {
@@ -513,6 +513,10 @@ img {
     padding: 70px 0;
   }
 
+  .body {
+    min-height: 100vh;
+  }
+
   .card-wrapper {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -521,7 +525,7 @@ img {
 
 @media (max-width: 480px) {
   .hero-content h2 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .section-title {
@@ -550,6 +554,10 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    backdrop-filter: none;
+  }
 
   /* Navbar tetap */
   .nav-wrapper {
