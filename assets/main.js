@@ -48,8 +48,6 @@ navMenu.querySelectorAll("a").forEach(link => {
 
     // Jika link adalah toggle submenu → JANGAN tutup menu
     if (this.classList.contains("submenu-toggle")) {
-      e.preventDefault();
-      e.stopPropagation();
       return;
     }
 
@@ -63,22 +61,22 @@ navMenu.querySelectorAll("a").forEach(link => {
 });
 
 /* ===== SUBMENU MOBILE ===== */
-// MENU MOBILE - SUBMENU FIX
-toggle.addEventListener("click", function (e) {
-  e.preventDefault();
-  e.stopPropagation(); // ⬅️ PENTING (INI KUNCINYA)
+document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
 
-  const submenu = this.nextElementSibling;
+    const submenu = this.nextElementSibling;
 
-  document.querySelectorAll(".submenu").forEach(menu => {
-    if (menu !== submenu) {
-      menu.classList.remove("show");
-    }
+    // Tutup submenu lain (opsional, tapi rapi)
+    document.querySelectorAll(".submenu").forEach(function (menu) {
+      if (menu !== submenu) {
+        menu.classList.remove("show");
+      }
+    });
+
+    submenu.classList.toggle("show");
   });
-
-  submenu.classList.toggle("show");
 });
-
 
 /* ===== LOAD BERITA + PAGINATION ===== */
 document.addEventListener("DOMContentLoaded", function () {
