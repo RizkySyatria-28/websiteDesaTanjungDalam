@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Klik item menu -> tutup
-navMenu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function (e) {
+navMenu.querySelectorAll("a:not(.submenu-toggle)").forEach(link => {
+  link.addEventListener("click", function () {
 
     // Jika link adalah toggle submenu → JANGAN tutup menu
     if (this.classList.contains("submenu-toggle")) {
@@ -64,6 +64,7 @@ navMenu.querySelectorAll("a").forEach(link => {
 document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
   toggle.addEventListener("click", function (e) {
     e.preventDefault();
+    e.stopPropagation(); 
 
     const submenu = this.nextElementSibling;
 
