@@ -471,7 +471,7 @@ img {
 /* =====================
    RESPONSIVE
 ===================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-wrapper {
     flex-direction: row;
     align-items: center;
@@ -553,7 +553,7 @@ img {
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar {
     width: 100%;
     backdrop-filter: none;
@@ -837,4 +837,12 @@ img {
   border-radius: 12px;
   margin: 0 auto 20px;
   display: block;
+}
+
+/* =====================
+   SUBMENU - DISABLED
+===================== */
+.has-submenu .submenu,
+.has-submenu .arrow {
+  display: none !important;
 }
