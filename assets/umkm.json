@@ -1,28 +1,38 @@
 [
   {
     "id": 1,
-    "nama": "Usaha Keripik Pisang",
-    "deskripsi_singkat": "Usaha makanan ringan rumahan dengan berbagai varian rasa.",
+    "nama": "Toko Sembako",
+    "deskripsi_singkat": "Menyediakan kebutuhan pokok harian masyarakat dengan lokasi strategis di pemukiman warga.",
     "deskripsi_lengkap": [
-      "Usaha keripik pisang ini dikelola secara rumahan oleh masyarakat desa.",
-      "Produk dibuat dari bahan lokal dengan proses higienis."
+      "Toko sembako milik Ibu Rahayu Ningsih merupakan usaha rumahan yang menyediakan berbagai kebutuhan pokok masyarakat sekitar, seperti beras, minyak goreng, gula, mie instan, serta kebutuhan harian lainnya. Lokasinya yang strategis di lingkungan pemukiman memudahkan warga untuk berbelanja tanpa harus pergi jauh ke pasar. Selain melayani kebutuhan harian, toko ini juga menjadi tempat interaksi sosial warga sekitar dan berperan penting dalam menunjang perekonomian keluarga pemilik."
     ],
-    "pemilik": "Ibu Siti",
-    "kontak": "08xxxxxxxxxx",
-    "gambar": "images/sample.jpg",
+    "pemilik": "Ibu Rahayu Ningsih",
+    "kontak": "082289700591",
+    "gambar": "images/umkm1.jpeg",
     "alamat": "Dusun I, Desa Tanjung Dalam"
   },
   {
     "id": 2,
-    "nama": "Kue Tradisional",
-    "deskripsi_singkat": "Produksi kue tradisional untuk konsumsi harian dan acara keluarga.",
+    "nama": "Toko Sembako",
+    "deskripsi_singkat": "Menyediakan sembako, jajanan, dan kebutuhan rumah tangga untuk warga sekitar.",
     "deskripsi_lengkap": [
-      "Menyediakan berbagai jenis kue tradisional khas desa.",
-      "Sering menerima pesanan untuk acara hajatan."
+      "Toko sembako milik Ibu Yesi melayani kebutuhan pokok masyarakat Desa Tanjung Dalam dengan menyediakan berbagai produk seperti bahan makanan, jajanan, minuman, serta kebutuhan rumah tangga lainnya. Usaha ini menjadi salah satu penopang ekonomi keluarga serta membantu memudahkan warga dalam memenuhi kebutuhan sehari-hari. Toko ini juga kerap melayani pembelian dalam jumlah kecil maupun besar, termasuk untuk kebutuhan acara hajatan dan kegiatan masyarakat."
     ],
-    "pemilik": "Ibu Ani",
-    "kontak": "08xxxxxxxxxx",
-    "gambar": "images/sample.jpg",
-    "alamat": "Dusun II, Desa Tanjung Dalam"
+    "pemilik": "Ibu Yesi",
+    "kontak": "085267790287",
+    "gambar": "images/umkm2.jpeg",
+    "alamat": "Dusun I, Desa Tanjung Dalam"
+  },
+  {
+    "id": 3,
+    "nama": "Toko Sembako",
+    "deskripsi_singkat": "Toko sembako di pinggir jalan desa yang melayani kebutuhan harian warga dan pengguna jalan. ",
+    "deskripsi_lengkap": [
+      "Toko sembako milik Ibu Ratih merupakan usaha mikro yang menyediakan berbagai kebutuhan pokok masyarakat seperti bahan makanan, minuman kemasan, pulsa, serta kebutuhan harian lainnya. Toko ini terletak di pinggir jalan desa sehingga mudah diakses oleh warga maupun pengguna jalan.Selain sebagai tempat berbelanja, toko ini juga berkontribusi dalam mendukung aktivitas ekonomi lokal dan menjadi salah satu sumber penghasilan utama keluarga pemilik."
+    ],
+    "pemilik": "Ibu Ratih",
+    "kontak": "082282963003",
+    "gambar": "images/umkm3.jpeg",
+    "alamat": "Dusun I, Desa Tanjung Dalam"
   }
 ]
